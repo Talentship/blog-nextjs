@@ -1,0 +1,193 @@
+[
+  {
+    "description": "    Last Viewed section helps to move on recently visited blogs",
+    "keyword": "Feature",
+    "name": "Last Viewed Section",
+    "line": 1,
+    "id": "last-viewed-section",
+    "tags": [],
+    "uri": "LastViewed.feature",
+    "elements": [
+      {
+        "id": "last-viewed-section;check-for-last-viewed-section-on-home-page-and-post-page",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Check for last viewed Section on home page and post page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I have Landed on Blog HomePage",
+            "result": {
+              "status": "passed",
+              "duration": 2144000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "verify Recently Viewed section should not be present",
+            "result": {
+              "status": "passed",
+              "duration": 64000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Click on a post on Homepage and verify Last viewed section is not present on the blog post page",
+            "result": {
+              "status": "passed",
+              "duration": 350000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "Back to HomePage",
+            "result": {
+              "status": "passed",
+              "duration": 467000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "postName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Learn How to Pre-render Pages Using Static Generation with Next.js"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 11,
+            "name": "Verify Last Viewed section has recently viewed post underneath.",
+            "result": {
+              "status": "passed",
+              "duration": 452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Now click on another post on homepage and verify section viewed section on post page",
+            "result": {
+              "status": "passed",
+              "duration": 210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Back to HomePage",
+            "result": {
+              "status": "passed",
+              "duration": 276000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "postName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "James Webb Space Telescope"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Learn How to Pre-render Pages Using Static Generation with Next.js"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Verify Recently viewed section has two post ordered with most recently viewed as First",
+            "result": {
+              "status": "passed",
+              "duration": 49000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Now click on third new post on homepage and verify section viewed section on post page",
+            "result": {
+              "status": "passed",
+              "duration": 180000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Back to HomePage",
+            "result": {
+              "status": "passed",
+              "duration": 130000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "postName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Preview Mode for Static Generation"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "James Webb Space Telescope"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Learn How to Pre-render Pages Using Static Generation with Next.js"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "Verify Recently viewed section has three post ordered with most recently viewed as First and next one after another",
+            "result": {
+              "status": "passed",
+              "duration": 177000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

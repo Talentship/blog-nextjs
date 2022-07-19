@@ -19,7 +19,7 @@ const Layout = ({ preview, children, allPosts}: Props) => {
     posts && setRecentlyViewed(JSON.parse(posts));
   }, []);
 
-  const latestViewed = allPosts.filter(post => recentlyViewed.includes(post.slug));
+  const latestViewed = allPosts ? allPosts.filter(post => recentlyViewed.includes(post.slug)): null;
 
   return (
     <>
@@ -28,7 +28,7 @@ const Layout = ({ preview, children, allPosts}: Props) => {
         <Alert preview={preview} />
         <main>{children}</main>
       </div>
-      {latestViewed.length > 0 && <LastViewed posts={latestViewed} />}
+      {latestViewed && latestViewed.length > 0 && <LastViewed posts={latestViewed} />}
       <Footer />
     </>
   )

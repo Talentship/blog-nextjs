@@ -26,5 +26,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+, "__test__/index.test.js", "pages/posts/[slug].test.js"  ]
 }

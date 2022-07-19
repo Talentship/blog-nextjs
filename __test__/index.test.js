@@ -119,7 +119,7 @@ describe('Rendering Index', () => {
       render(<LastViewed posts={[]} />);
     });
     
-    it("Recently Viewed Component doesnt have posts to be rendered", async () => {
+    it("Recently Viewed Component rendering with posts from the localStorage", async () => {
       const posts = await getAllPosts([
         'title',
         'date',

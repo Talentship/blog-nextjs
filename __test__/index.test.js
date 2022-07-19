@@ -1,12 +1,9 @@
 import Index from '../pages/index';
-import { AppProps } from 'next/app'
-
-
+import { AppProps } from 'next/app';
 import "@testing-library/jest-dom";
-import { getAllPosts, getPostBySlug } from '../lib/api'
+import { getAllPosts } from '../lib/api'
 
 import { render, screen } from '@testing-library/react';
-import Layout from '../components/layout';
 import LastViewed from '../components/last-viewed';
 
 describe('Rendering Index', () => {

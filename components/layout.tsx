@@ -11,15 +11,23 @@ type Props = {
   allPosts: PostType[]
 }
 
-const Layout = ({ preview, children, allPosts}: Props) => {
-  const [recentlyViewed, setRecentlyViewed] = useState<string[]>([]);
+const Layout = ({ preview, children, allPosts}: Props) => { 
+  const [recentlyViewed, setRecentlyViewed] = useState<PostType[]>([]);
 
   useEffect(() => {
-    const posts = localStorage.getItem('viewedPost');
-    posts && setRecentlyViewed(JSON.parse(posts));
-  }, []);
+    const localStorageData = localStorage.getItem('viewedPost');
+    const posts: string[] = localStorageData && JSON.parse(localStorageData || "");
+    let lastViewed: PostType[] = [];
 
-  const latestViewed = allPosts.filter(post => recentlyViewed.includes(post.slug));
+    posts?.length > 0 && posts.map(data => {
+        const post = allPosts.find(elem => {
+          if(elem.slug == data)
+            return elem;
+        });
+        post && lastViewed.push(post);
+    })
+    setRecentlyViewed(lastViewed);
+  }, [allPosts]);
 
   return (
     <>
@@ -28,7 +36,7 @@ const Layout = ({ preview, children, allPosts}: Props) => {
         <Alert preview={preview} />
         <main>{children}</main>
       </div>
-      {latestViewed.length > 0 && <LastViewed posts={latestViewed} />}
+      {recentlyViewed.length > 0 && <LastViewed posts={recentlyViewed} />}
       <Footer />
     </>
   )

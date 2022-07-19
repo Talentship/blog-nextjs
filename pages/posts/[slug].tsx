@@ -27,9 +27,10 @@ const Post = ({ post, morePosts, preview, allPosts }: Props) => {
       blogPosts = JSON.parse(localStorage.getItem('viewedPost') || '');
       blogPosts = blogPosts.filter(blogPost => blogPost != post.slug);
     }
-    blogPosts.push(post.slug);
+    blogPosts.unshift(post.slug);
     localStorage.setItem('viewedPost', JSON.stringify(blogPosts));
-  },[post]);
+
+  },[post.slug]);
 
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {

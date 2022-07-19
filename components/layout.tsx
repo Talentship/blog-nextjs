@@ -15,8 +15,8 @@ const Layout = ({ preview, children, allPosts}: Props) => {
   const [recentlyViewed, setRecentlyViewed] = useState<PostType[]>([]);
 
   useEffect(() => {
-    const localStorageData = localStorage.getItem('viewedPost');
-    const posts: string[] = localStorageData && JSON.parse(localStorageData || "");
+    const localViewedPost = localStorage.getItem('viewedPost');
+    const posts: string[] = localViewedPost && JSON.parse(localViewedPost);
     let lastViewed: PostType[] = [];
 
     posts?.length > 0 && posts.map(data => {
